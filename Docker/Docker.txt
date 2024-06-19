@@ -1,0 +1,328 @@
+Docker on Ubuntu
+    1  apt-get update
+    2  apt-get install ca-certificates curl
+    3  install -m 0755 -d /etc/apt/keyrings
+    4  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    5  sudo chmod a+r /etc/apt/keyrings/docker.asc
+    6  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    7    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    8  apt-get update
+    9  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   10  history
+   11  docker
+   12  Docker images
+   13  docker images
+   14  whoami
+   15  exit
+   16  docker images
+   17  docker run hello-world
+   18  docker ps
+   19  docker ps-a
+   20  docker ps -a
+   21  docker run hello-world --name balaji
+   22  docker --name balaji run hello-world
+   23  docker ps
+   24  docker ps-a
+   25  docker ps -a
+   26  docker run hello-world balaji
+   27  docker run balaji hello-world
+   28  docker run --name balaji hello-world
+   29  docker ps -a
+   30  docker pull nginx
+   31  docker images
+   32  docker run --name nginx-1 nginx
+   33  history
+   34  docker images
+   35  docker ps
+   36  docker
+   37  clear
+   38  docker ps
+   39  docker stop 1eadfd53bb99
+   40  docker ps
+   41  docker run nginx
+   42  docker ps
+   43  docker run -d --name nginx-1 nginx
+   44  docker run --name nginx-1 -d nginx
+   45  docker ps
+   46  docker ps -a
+   47  docker run --name nginx-2 -d nginx
+   48  docker ps
+   49  docker ps -a
+   50  docker ps
+   51  docker inspect ba8d759b8a8e 
+   52  docker ps 
+   53  docker stop ba8d759b8a8e
+   54  docker ps
+   55  docker run --name nginx-3 -p 7090:80 -d nginx
+   56  docker ps
+   57  docker ps -a
+   58  docker rm a80a8428ff2 8e7b859c7918 705f230502af 31aee1712021
+   59  docker ps
+   60  docker ps -a
+   61  docker rm 1eadfd53bb99 6766ae11c914 ba8d759b8a8e
+   62  docker ps
+   63  docker stop nginx-3
+   64  docker ps
+   65  docker ps -a
+   66  docker start nginx-3
+   67  docker ps
+   68  cd /var/lib
+   69  ls
+   70  cd docker
+   71  ls
+   72  cd containers
+   73  ls
+   74  du -sh 9d3d119bcddc06e8773ad284f532ba6b8c68c6dcd64ac4f022e148e393145a8c
+   75  cd 9d3d119bcddc06e8773ad284f532ba6b8c68c6dcd64ac4f022e148e393145a8c
+   76  ls
+   77  cd ..
+   78  cd
+   79  ls
+   80  docker ps
+   81  docker exec 9d3d119bcddc ls
+   82  docker exec -it 9d3d119bcddc /bin/bash
+   83  docker ps
+   84  docker images
+   85  docker rmi hello-world
+   86  docker images
+   87  docker rmi nginx
+   88  docker run -it ubuntu /bin/bash
+   89  docker ps
+   90  docker ps -a
+   91  docker rm ed197ebf468d
+   92  docker rmi ubuntu
+   93  docker images
+   94  docker ps
+   95  docker inspect nginx-3
+   96  docker logs nginx-3
+   97  docker stop nginx-3
+   98  docker ps
+   99  docker rm nginx-3
+  100  docker ps -a
+  101  docker images
+  102  docker rmi nginx
+  103  docker images
+  104  docker run --name mySql-1 -d -P mysql
+  105  docker images
+  106  docker ps
+  107  dpcker ps -a
+  108  docker ps -a
+  109  docker logs mySql-1
+  110  docker run -d -P -e MYSQL_ROOT_PASSWORD=mypass mysql
+  111  docker ps
+  112  docker stop 48e8d9708aca
+  113  docker ps
+  114  docker rm 48e8d9708aca
+  115  docker ps -a
+  116  docker rm a3854cf9a8e3
+  117  docker ps -a
+  118  docker images
+  119  docker rmi mysql
+  120  docker images
+  121  docker ps
+  122  docker ps -a
+  123  ls
+  124  vim dockerfile
+  125  cd /var/lib/docker/volumes
+  126  ls
+  127  cd
+  128  ls
+  129  rm dockerfile
+  130  ls
+  131  docker pull mysql
+  132  docker images
+  133  docker inspect mysql
+  134  ls
+  135  mkdir mySqlVolume-1
+  136  ls
+  137  pwd
+  138  cd mySqlVolume
+  139  cd mySqlVolume-1
+  140  psw
+  141  pwd
+  142  cd
+  143  docker run --name mySql-1 -e MYSQL_ROOT_PASSWORD=Engineer003! -v /root/mySqlVolume-1:/var/lib/mysql mysql
+  144  docker ps
+  145  docker stop 930dbfdb0395
+  146  docker rm 930dbfdb0395
+  147  docker ps
+  148  docker ps -a
+  149  docker images
+  150  history
+  151  docker run --name mySql-1 -e MYSQL_ROOT_PASSWORD=Engineer003! -v /root/mySqlVolume-1:/var/lib/MySQL -d mysql
+  152  docker ps
+  153  cd /root/mySqlVolume-1
+  154  ls
+  155  cd /root/var/lib/mysql
+  156  cd
+  157  cd /var/lib
+  158  ls
+  159  cd mysql
+  160  ls | gerp mysql
+  161  ls | grep mysql
+  162  cd
+  163  docker ps
+  164  docker exec -it mySql-1 /bin/bask
+  165  docker exec -it mySql-1 /bin/bash
+  166  docker ps
+  167  docker stop mySql-1
+  168  docker ps -a
+  169  ls
+  170  cd mySqlVolume-1
+  171  ls
+  172  docker rm mySql-1
+  173  docker ps -a
+  174  docker volumes
+  175  docker volume
+  176  docker volume create myDB
+  177  docker volume
+  178  docker volume ls
+  179  ls
+  180  cd
+  181  cd /var/lib/docker/volumes
+  182  ls
+  183  cd myDB
+  184  cd
+  185  docker run --name mySql-1 -p 3030:3306 -e MYSQL_ROOT_PASSWORD=Engineer003! -v myDB:/var/lib/mysql -d mysql
+  186  docker ps
+  187  cd /var/lib/docker
+  188  lsa
+  189  ls
+  190  cd volumes
+  191  ls
+  192  cd myDB
+  193  ls
+  194  cd _data
+  195  ls
+  196  cd
+  197  docker ps
+  198  docker inspect mySql-1
+  199  ping 54.152.132.126
+  200  mysql -h 172.17.0.2 
+  201  docker ps
+  202  mysql -h 172.17.0.2 -u root -Engineer003!
+  203  ping 172.17.0.2
+  204  history
+  205  clear
+  206  docker stop mySql-1
+  207  docker ps
+  208  docker ps -a
+  209  docker rm mySql-1
+  210  docker rmi mysql
+  211  docker images
+  212  exit
+  213  mkdir images
+  214  ls
+  215  cd images
+  216  wget https://www.tooplate.com/zip-templates/2137_barista_cafe.zip
+  217  ls
+  218  rm 2137_barista_cafe.zip
+  219  ls
+  220  mkdir barista
+  221  wget https://www.tooplate.com/zip-templates/2137_barista_cafe.zip
+  222  apt install unzip -y
+  223  ls
+  224  unzip 2137_barista_cafe.zip
+  225  ls
+  226  cd 2137_barista_cafe
+  227  ls
+  228  tar czvf barista.tar.gz *
+  229  ls
+  230  mv barista.tar.gz ../
+  231  ls
+  232  cd ..
+  233  ls
+  234  mv barista.tar.gz /root/images/barista
+  235  ls
+  236  cd barista
+  237  ls
+  238  cd ..
+  239  ls
+  240  rm -rf 2137_barista_cafe.zip 2137_barista_cafe
+  241  ls
+  242  cd barista
+  243  ls
+  244  vim Dockerfile
+  245  docker build -t baristaimg .
+  246  ls
+  247  docker images
+  248  docker ps
+  249  docker ps -a
+  250  ls
+  251  vim Dockerfile
+  252  docker images
+  253  docker run baristaimg
+  254  ls
+  255  docker ps
+  256  docker stop 8f44a83492f7
+  257  docker ps
+  258  docker ps -a
+  259  docker rm 8f44a83492f7
+  260  docker ps -a
+  261  docker run --name barista_cafe -d baristaimg
+  262  docker stop barista_cafe
+  263  docker ps
+  264  docker ps -a
+  265  docker rm barista_cafe
+  266  docker run --name barista_cafe -p 7090:80 -d baristaimg
+  267  docker login
+  268  docker push baristaimg
+  269  docker images
+  270  docker rmi baristaimg
+  271  docker ps
+  272  docker stop barista_cafe
+  273  docker rm barista_cafe
+  274  docker ps -a
+  275  docker rmi barista_cafe
+  276  docker images
+  277  docker rmi baristaimg
+  278  docker images
+  279  history
+  280  ls
+  281  cd images
+  282  ls
+  283  cd barista
+  284  ls
+  285  docker build -t balaji230792/baristaimg:v1
+  286  docker build -t balaji230792/baristaimg:v1 .
+  287  docker images
+  288  docker run --name barista_cafe -d -p 7090:80 balaji230792/baristaimg
+  289  docker run --name barista_cafe -p 7090:80 -d balaji/230792/baristaimg:v1
+  290  docker images
+  291  docker ps
+  292  docker run --name barista_cafe -p 7090:80 -d balaji230792/baristaimg:v1
+  293  ls
+  294  docker ps
+  295  docker login
+  296  history
+  297  docker push balaji230792/baristaimg:v1
+  298  history
+
+
+    1  ls
+    2  ipconfig
+    3  ifconfig
+    4  ps
+    5  apt update
+    6  apt install process
+    7  ps -ef
+    8  history
+
+docker run --name mysql-1 -e MYSQL_ROOT_PASSWORD=engineer003! -p 3030:3306 -v
+
+/root/mySqlVolume-1
+
+docker run --name mySql-1 -e MYSQL_ROOT_PASSWORD=Engineer003! -v /root/mySqlVolume-1:/var/lib/MySQL -d mysql
+
+
+FROM ubuntu:latest
+LABEL "Author"="Balaji"
+LABEL "Project"="Barista"
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt install git -y
+RUN apt install apache2 -y
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+EXPOSE 80
+WORKDIR /var/www/html
+VOLUME /var/log/apache2
+ADD barista.tar.gz /var/www/html
