@@ -1,0 +1,106 @@
+Ansible Config File Path - cd /etc/ansible
+ host_key_checking - False
+
+
+1  vim install_ansible.sh
+    2  install_ansible.sh
+    3  ./install_ansible.sh
+    4  ls -l
+    5  chmod 400 install_ansible.sh
+    6  ./install_Ansible.sh
+    7  ./install_ansible.sh
+    8  chmod 600 install_ansible.sh
+    9  ./install_ansible.sh
+   10  vim install_ansible.sh
+   11  ./install_ansible.sh
+   12  chmod +x install_ansible.sh
+   13  install_ansible.sh
+   14  ./install_ansible.sh
+   15  ansible --version
+   16  sudo apt update
+   17  sudo apt install software-properties-common
+   18  sudo add-apt-repository --yes --update ppa:ansible/ansible
+   19  sudo apt install ansible
+   20  vim install_ansble.sh
+   21  ls
+   22  rm install_ansble.sh
+   23  vim install_ansible.sh
+   24  ./install_ansible.sh
+   25  vim inventory
+   26  mv inventory inventory.yml
+   27  ls
+   28  mkdir barista
+   29  cd /etc
+   30  ls
+   31  cd ansible
+   32  ls
+   33  vim ansible.cfg
+   34  mv ansible.chg ansible.cfg.bak
+   35  mv ansible.cfg ansible,cfg,bak
+   36  mv ansible,cfg,bak ansible.cfg.bak
+   37  ls
+   38  ansible-config init --disabled -t all > ansible.cfg
+   39  vim ansible.cfg
+   40  cd
+   41  ls
+   42  vim install_ansible.sh
+   43  rm inventory.yml
+   44  cd barista
+   45  vim inventory.yml
+   46  vim BaristaKP.pem
+   47  ls
+   48  chmod 400 BaristaKP.pem
+   49  cat inventory.yml
+   50  ansible barista -m ping -i inventory.yml
+   51  ansible barista -m ping -i inventory
+   52  mv barista.yml inventory
+   53  mv inventory.yml inventory
+   54  ansible barista -m ping -i inventory
+   55  vim binventory
+   56  rm binventory
+   57  vim inventory
+   58  ansible barista -m ping -i inventory
+   59  vim index.html
+   60  ansible barista -m "ansible.builtin.copy" -a "src=index.html des=/var/www/html" -i inventory
+   61  ansible barista -m ansible.builtin.copy -a "src=index.html dest=/var/www/html" -i inventory
+   62  ansible barista -m ansible.builtin.apt -a "name=httpd state=present" -i inventory
+   63  ansible barista -m apt -a "name=apache2 state=present" -i inventory
+   64  ansible barista -m apt -a "name=appache2 state=present" -u ubuntu --private-key=BaristaKP.pem
+   65  ansible barista -m apt -a "name=appache2 state=present" -u ubuntu --private-key=/BaristaKP.pem -i inventory
+   66  ansible barista -m apt -a "name=apache2 state=present" -u ubuntu --private-key=/BaristaKP.pem -i inventory
+   67  ansible barista -m apt -a "name=apache2 state=present" -u ubuntu --private-key=/BaristaKP.pem -i inventory --become
+   68  ansible barista -m ping -i inventory
+   69  ansible barista -m apt -a "name=apache2 state=present" -i inventory --become
+   70  ansible barista -m apt -a "name=update state=present" -i inventory
+   71  ansible barista -m apt -a "name=httpd state=present" -i inventory --become
+   72  ansible barista -m apt-get -a "name=httpd state=present" -i inventory --become
+   73  ls
+   74  vim barista_playbook.yml
+   75  ansible-playbook -i inventory barista_playbook.yml
+   76  vim barista_playbook.yml
+   77  ansible-playboon -i inventory barista_playbook.yml
+   78  ansible-playbook -i inventory barista_playbook.yml
+   79  vim barista_playbook.yml
+   80  ansible-playbook -i inventory barista_playbook.yml
+   81  ls
+   82  rm BaristaKP.pem
+   83  ls
+   84  vim BaristaKP.pem
+   85  cat BaristaKP.pem
+   86  ls
+   87  vim inventory
+   88  clear
+   89  ansible barista -m ping -i inventory
+   90  chmod 400 BaristaKP.pem
+   91  ansible barista -m ping -i inventory
+   92  anisble-playbook -i inventory barista_playbook.yml
+   93  ansible-playbook -i inventory barista_playbook.yml
+   94  vim barista_playbook.yml
+   95  ansible-playbook -i inventory barista_playbook.yml
+   96  ansible barista -m ansible.builtin.copy -a "src=index.html dest=/var/www/html" -i inventory
+   97  ansible barista -m ansible.builtin.copy -a "src=index.html dest=/var/www/html" -i inventory --become
+   98  ls
+   99  cat index.html
+  100  ansible barista -m ansible.builtin.copy -a "src=index.html dest=/var/www/html/index.html" -i inventory --become
+  101  vim index.html
+  102  ansible barista -m ansible.builtin.copy -a "src=index.html dest=/var/www/html/index.html" -i inventory --become

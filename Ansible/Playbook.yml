@@ -1,0 +1,15 @@
+---
+- name: Webserver setup
+  hosts: barista
+  become: yes
+  tasks:
+    - name: Install httpd
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+
+    - name: Start Service
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: yes
